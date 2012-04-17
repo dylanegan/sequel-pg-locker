@@ -6,16 +6,17 @@ module Sequel
   module PG
     module Locker
       def self.lock(id)
-        Timeout.timeout(3) { connection["SELECT pg_try_advisory_lock(#{id})"].get }
+        db["SELECT pg_try_advisory_lock(#{id})"].get
       end
 
       private
 
-      def self.connection
-        @connection ||= Sequel.connect(ENV['DATABASE_URL'], encoding: "unicode") do |conn|
-          conn.run("SET synchronous_commit TO 'off'")
-          conn
-        end
+      def self.db
+        @db ||= Sequel.connect(database_url)
+      end
+
+      def self.database_url
+        @database_url ||= ENV['DATABASE_URL']
       end
     end
   end
