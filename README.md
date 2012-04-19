@@ -2,6 +2,8 @@
 
 ![](https://github.com/dylanegan/sequel-pg-locker/raw/master/sequel-pg-locker.jpg)
 
+[![Build Status](https://secure.travis-ci.org/dylanegan/sequel-pg-locker.png?branch=master)](http://travis-ci.org/dylanegan/sequel-pg-locker)
+
 A simple way, using PostgreSQL, to has [semaphores](http://en.wikipedia.org/wiki/Semaphore_(programming\)).
 
 Pulled from code by [Mark Fine](https://github.com/mfine).
