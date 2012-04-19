@@ -8,7 +8,7 @@ language: ruby
 rvm:
   - 1.9.2
   - 1.9.3
-  - jruby-19mode
+  # - jruby-19mode # disabled for now, see http://travis-ci.org/#!/dylanegan/sequel-pg-locker/jobs/1130282
   - rbx-19mode
 
 script: bundle exec rake test --trace
