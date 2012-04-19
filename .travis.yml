@@ -1,0 +1,14 @@
+before_script:
+  - psql -c 'create database sequel_pg_locker_test;' -U postgres
+
+env: DATABASE_URL=postgres://postgres:@localhost/sequel_pg_locker_test
+
+language: ruby
+
+rvm:
+  - 1.9.2
+  - 1.9.3
+  - jruby-19mode
+  - rbx-19mode
+
+script: bundle exec rake test --trace
